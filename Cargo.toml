@@ -1,0 +1,17 @@
+[package]
+name = "apkeep"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.87"
+description = "APKeep's atomic predicates and all-pairs reachability in Rust, over any decision-diagram engine"
+license-file = "LICENSE"
+repository = "https://github.com/endaytrer/apkeep"
+keywords = ["network-verification", "atomic-predicates", "bdd", "apkeep"]
+categories = ["algorithms"]
+
+# No decision-diagram engine of its own: callers implement `Engine`.
+[dependencies]
+
+[dev-dependencies]
+# The engine of the tests.
+oxidd = { version = "0.13", default-features = false, features = ["manager-index", "bdd", "apply-cache-direct-mapped"] }
